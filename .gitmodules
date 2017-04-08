@@ -1,0 +1,24 @@
+[submodule "oh-my-zsh"]
+	path = oh-my-zsh
+	url = https://github.com/robbyrussell/oh-my-zsh
+[submodule "vim/autoload/vim-plug"]
+	path = vim/autoload/vim-plug
+	url = https://github.com/junegunn/vim-plug
+[submodule "vim-plug"]
+	path = vim-plug
+	url = https://github.com/junegunn/vim-plug
+[submodule "tmux/plugins/tpm"]
+	path = tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm
+[submodule "asdf"]
+	path = asdf
+	url = https://github.com/asdf-vm/asdf.git
+[submodule "dotlinker/test/libs/bats"]
+	path = dotlinker/test/libs/bats
+	url = https://github.com/sstephenson/bats
+[submodule "dotlinker/test/libs/bats-support"]
+	path = dotlinker/test/libs/bats-support
+	url = https://github.com/ztombol/bats-support
+[submodule "dotlinker/test/libs/bats-assert"]
+	path = dotlinker/test/libs/bats-assert
+	url = https://github.com/ztombol/bats-assert

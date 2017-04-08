@@ -1,0 +1,53 @@
+#!/usr/bin/env bash
+
+source_dir=${DOTLINKER_SOURCE:-$PWD}
+target_dir=${DOTLINKER_TARGET:-~}
+
+green="$(tput setaf 2)"
+blue="$(tput setaf 4)"
+red="$(tput setaf 1)"
+
+existing_symlinks=($(ls -la $target_dir | grep "\->" | grep "\." | sed -E "s/[^\.]*\.([^[:space:]]*)[^\/]*(.*)$/\1::\2/"))
+existing_symlinks_map=$(mktemp -d)
+for symlink in "${existing_symlinks[@]}"; do
+  key=${symlink%%::*}
+  value=${symlink#*::}
+  echo $value > $existing_symlinks_map/$key
+done
+
+create_symlink() {
+  ret=0
+  source_file=$source_dir/$1
+  target_file=$target_dir/.$1
+
+  if [[ -e "$existing_symlinks_map/$1" ]]; then
+    if [[ "$(< $existing_symlinks_map/$1)" == $source_file ]]; then
+      echo "${blue}Link exists $target_file -> $source_file"
+    else
+      echo "${red}Link error $target_file -> $source_file"
+      ret=1
+    fi
+  else
+    ln -s $source_file $target_file
+    echo "${green}Link created $target_file -> $source_file"
+  fi
+  return $ret
+}
+
+create_symlinks() {
+  ret=0
+  for val in "$@"; do
+    if !(create_symlink $val); then
+      ret=1
+    fi
+  done
+  return $ret
+}
+
+if create_symlinks "$@"; then
+  rm -r $existing_symlinks_map
+  exit 0
+else
+  rm -r $existing_symlinks_map
+  exit $ret
+fi

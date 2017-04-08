@@ -1,0 +1,52 @@
+#!/usr/bin/env bash
+
+set -e
+
+base_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+cd "${base_dir}"
+echo $base_dir
+
+echo "Update submodules"
+git submodule update --init --recursive
+git submodule foreach git pull origin master
+
+echo "Ensure symlinks are setup"
+dotlinker/link abc asdf gitconfig gitignore_global git-template talisman talisman-precommit-config oh-my-zsh ideavimrc tmux tmux.conf tool-versions vimrc vim zshrc
+
+echo "Ensure that oh-my-zsh is installed"
+oh-my-zsh/tools/install.sh || true
+
+echo "Ensure that homebrew is installed"
+hash brew || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+
+echo "Ensure brew bundle"
+brew bundle
+
+echo "Ensure that asdf is installed"
+
+install_asdf_plugin() {
+  if asdf plugin list | grep $1; then
+    echo "$1 already installed"
+  else
+    asdf plugin add $1;
+  fi
+}
+
+cd asdf && git checkout "$(git describe --abbrev=0 --tags)" && cd ..
+asdf update
+install_asdf_plugin "python"
+install_asdf_plugin "java"
+install_asdf_plugin "nodejs"
+sh asdf/plugins/nodejs/bin/import-release-team-keyring
+install_asdf_plugin "cmake"
+asdf install
+
+echo "Ensure that vim plugins are installed"
+vim +PlugInstall +PlugUpgrade +PlugUpdate +qall
+
+echo "Ensure that talisman is installed"
+curl --silent https://raw.githubusercontent.com/thoughtworks/talisman/master/global_install_scripts/update_talisman.bash > /tmp/update_talisman.bash && /bin/bash /tmp/update_talisman.bash
+
+echo "Echo what is installed in brew but not in the brewfile"
+brew bundle cleanup

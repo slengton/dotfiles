@@ -1,0 +1,35 @@
+fileignoreconfig:
+- filename: zshrc
+  checksum: 499afd529ae8a0bf78ec5632eb381d634391e0ef5ad48c68425014c942bfc1f8
+  ignore_detectors: []
+- filename: oh-my-zsh
+  checksum: 853b63d332d3c980d4479a7d66ba02318dc923fabe5ed8a4ecdc3a6cb438f13f
+  ignore_detectors: []
+- filename: dotbot
+  checksum: dcfae8e545d2c406982c0d4c54678c48e4910f385ddce2c2eb8157ad32a6d688
+  ignore_detectors: []
+- filename: dotbot-brewfile
+  checksum: 2ce0e1612ff18fd7f64c6b461d31549ab76ccb0b5ad5fdecde376b98e301c5e3
+  ignore_detectors: []
+- filename: tmux/plugins/tpm
+  checksum: 04be944858d0c25673bfd366086305355d09baea261884dc96b7daa3cbb79b2d
+  ignore_detectors: []
+- filename: vim-plug
+  checksum: 744e47040316761ea3cd84cdbef40ac7584b7beb2fecab78f9ca65d7f43fdf28
+  ignore_detectors: []
+- filename: Tomorrow
+  checksum: 0987632ff7bb3a99f5f51e27058ad55ee0397d401717fd6b5a00f095d89424db
+  ignore_detectors: []
+- filename: asdf
+  checksum: 080d25a7e79f534dcaa287c9028a292aef54a558f7cb4fa85ff7f016174d6462
+  ignore_detectors: []
+- filename: dotlinker/test/libs/bats
+  checksum: 61cb09d5c8828b6749db4582b28a3934fdccb4af886a0650cc33e13634f11e76
+  ignore_detectors: []
+- filename: dotlinker/test/libs/bats-support
+  checksum: 788ab79fec577afad947abca9b3630bbe3d4518d29e9290e06c073d0b24ae5ed
+  ignore_detectors: []
+- filename: dotlinker/test/libs/bats-assert
+  checksum: eb356bba889ada78aa30e698259f3492868c081b38ecef3a88431790ad459bc5
+  ignore_detectors: []
+scopeconfig: []

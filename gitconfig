@@ -1,0 +1,12 @@
+[user]
+    name = slengton
+    email = stefan@lengton.life
+
+[includeIf "gitdir:~/code/work/"]
+    path = ~/code/work/.gitconfig
+
+[core]
+	autocrlf = input
+	excludesfile = ~/.gitignore_global
+[init]
+	templatedir = ~/.git-template
