@@ -1,5 +1,5 @@
 [user]
-    name = slengton
+    name = Stefan Lengton
     email = stefan@lengton.life
 
 [includeIf "gitdir:~/code/work/"]
