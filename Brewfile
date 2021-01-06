@@ -33,7 +33,7 @@ cask "microsoft-teams"
 cask "tomighty"
 cask "virtualbox"
 cask "visual-studio-code"
-cask "zoomus"
+cask "zoom"
 mas "Keynote", id: 409183694
 mas "Kindle", id: 405399194
 mas "Microsoft Excel", id: 462058435
