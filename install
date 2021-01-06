@@ -12,7 +12,7 @@ git submodule update --init --recursive
 git submodule foreach git pull origin master
 
 echo "Ensure symlinks are setup"
-dotlinker/link abc asdf gitconfig gitignore_global git-template talisman talisman-precommit-config oh-my-zsh ideavimrc tmux tmux.conf tool-versions vimrc vim zshrc
+dotlinker/link abc asdf config gitconfig gitignore_global git-template talisman talisman-precommit-config oh-my-zsh ideavimrc tmux tmux.conf tool-versions vimrc nvimrc vim zshrc
 
 echo "Ensure that oh-my-zsh is installed"
 oh-my-zsh/tools/install.sh || true
@@ -44,6 +44,8 @@ install_asdf_plugin "rust"
 asdf install
 
 echo "Ensure that vim plugins are installed"
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 vim +PlugInstall +PlugUpgrade +PlugUpdate +qall
 
 echo "Ensure that talisman is installed"
