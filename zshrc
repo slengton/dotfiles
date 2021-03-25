@@ -1,13 +1,13 @@
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
 
-ZSH_THEME="avit"
+ZSH_THEME="robbyrussell"
 
 # Don't add to history if command preceeded with a space
 HISTCONTROL="ignorespace"
 
 # specify plugins to load
-plugins=(git fasd history tmux vi-mode)
+plugins=(git fasd history tmux)
 
 export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH
 

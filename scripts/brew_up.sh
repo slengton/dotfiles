@@ -6,6 +6,4 @@
 
 (set -x; brew upgrade;)
 
-(set -x; brew  cu -a;)
-
 (set -x; brew doctor;)
