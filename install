@@ -36,11 +36,9 @@ install_asdf_plugin() {
 cd asdf && git checkout "$(git describe --abbrev=0 --tags)" && cd ..
 asdf update
 install_asdf_plugin "python"
-install_asdf_plugin "java"
 install_asdf_plugin "nodejs"
 sh asdf/plugins/nodejs/bin/import-release-team-keyring
 install_asdf_plugin "cmake"
-install_asdf_plugin "rust"
 asdf install
 
 echo "Ensure that vim plugins are installed"

@@ -36,6 +36,3 @@ alias dc="docker-compose"
 # asdf
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
-
-#asdf java
-. ~/.asdf/plugins/java/set-java-home.zsh
