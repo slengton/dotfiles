@@ -12,7 +12,7 @@ git submodule update --init --recursive
 git submodule foreach git pull origin master
 
 echo "Ensure symlinks are setup"
-dotlinker/link asdf config gitconfig gitignore_global git-template talisman talisman-precommit-config oh-my-zsh ideavimrc tmux tmux.conf tool-versions vimrc nvimrc vim zshrc
+dotlinker/link asdf alacritty.yml config gitconfig gitignore_global git-template talisman talisman-precommit-config oh-my-zsh ideavimrc tmux tmux.conf tool-versions vimrc nvimrc vim zshrc
 
 echo "Ensure that oh-my-zsh is installed"
 oh-my-zsh/tools/install.sh || true
