@@ -33,6 +33,9 @@ alias talisman=/Users/stefanlengton/.talisman/bin/talisman_darwin_amd64
 # aliases
 alias dc="docker-compose"
 
+# brew
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # asdf
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
